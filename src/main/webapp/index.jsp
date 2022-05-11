@@ -1,16 +1,17 @@
-
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
    <head>
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
       <!-- mobile metas -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>pcoint</title>
+      <title>OnlineShop</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -30,6 +31,11 @@
       <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+      <!-- Google OAuth2.0 -->
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <meta name="google-signin-scope" content="profile email">
+      <meta name="google-signin-client_id" content="514770052287-j3u5heaf45imceft1cnnfag7vu8d557i.apps.googleusercontent.com">
    </head>
    <!-- body -->
    <body class="main-layout">
@@ -71,7 +77,11 @@
                                     <a class="nav-link" href="#contact">Contact us</a>
                                  </li>
                               </ul>
-                              <div class="sign_btn"><a href="#">Sign in</a></div>
+                              <% if (session.getAttribute("code") != "loggedin") { %>
+							  	<div class="sign_btn"><a href="/onlineshop/login?code=login">Sign In</a></div>
+							  <% } else { %>
+							  	<div class="sign_btn"><a href="#">Logged In</a></div>
+							  <% } %>
                            </div>
                         </nav>
                      </div>
@@ -332,7 +342,7 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-12">
-                        <p>© 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a></p>
+                        <p>Â© 2019 All Rights Reserved. Design by <a href="https://html.design/"> Free Html Templates</a></p>
                      </div>
                   </div>
                </div>

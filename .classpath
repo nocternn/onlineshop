@@ -9,5 +9,16 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="A:/Apache Software Foundation/Tomcat 10.0/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/google-api-client-1.32.1.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/google-api-client-servlet-1.32.1.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/google-oauth-client-1.31.5.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-oauth-java-client/libs/google-oauth-client-servlet-1.33.3.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-oauth-java-client/libs/google-http-client-1.41.7.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/gson-2.8.6.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/httpclient-4.5.13.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/httpcore-4.4.14.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/google-http-client-jackson-1.22.0.jar"/>
+	<classpathentry kind="lib" path="A:/Java/google-api-java-client/libs/fluent-hc-4.5.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
