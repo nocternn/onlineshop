@@ -14,42 +14,42 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-api-java-client/libs/google-api-client-1.32.1.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-api-java-client/libs/google-api-client-1.32.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-api-java-client/libs/google-api-client-servlet-1.32.1.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-api-java-client/libs/google-api-client-servlet-1.32.1.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-oauth-java-client/libs/google-oauth-client-1.33.3.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-oauth-java-client/libs/google-oauth-client-1.33.3.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-oauth-java-client/libs/google-oauth-client-servlet-1.33.3.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-oauth-java-client/libs/google-oauth-client-servlet-1.33.3.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-api-java-client/libs/google-http-client-1.39.2.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-api-java-client/libs/google-http-client-1.39.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-api-java-client/libs/commons-logging-1.2.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-api-java-client/libs/commons-logging-1.2.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-api-java-client/libs/gson-2.8.6.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-api-java-client/libs/gson-2.8.6.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/parallels/Downloads/google-api-java-client/libs/google-http-client-jackson-1.22.0.jar">
+	<classpathentry kind="lib" path="/home/parallels/eclipse-workspace/onlineshop/src/main/webapp/WEB-INF/google-api-java-client/libs/google-http-client-jackson-1.22.0.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
