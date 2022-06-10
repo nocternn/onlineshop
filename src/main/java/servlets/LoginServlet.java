@@ -79,7 +79,7 @@ public class LoginServlet extends HttpServlet {
         	request.getRequestDispatcher("/info.jsp").forward(request, response);
         	// Debug
         	
-//        	response.sendRedirect(url.toString());
+        	response.sendRedirect(url.toString());
         }
 	}
 
@@ -90,7 +90,7 @@ public class LoginServlet extends HttpServlet {
 		doGet(req,resp);
 	}
 	
-    private static String getToken(final String code) throws ClientProtocolException,IOException {
+    private static String getToken(final String code) throws IOException, ClientProtocolException, IOException {
     	String response = Request.Post(Constants.GOOGLE_LINK_GET_TOKEN)
     	        .bodyForm(Form.form().add("client_id", Constants.GOOGLE_CLIENT_ID)
     	            .add("client_secret", Constants.GOOGLE_CLIENT_SECRET)
@@ -100,5 +100,5 @@ public class LoginServlet extends HttpServlet {
 	    JsonObject jobj = new Gson().fromJson(response, JsonObject.class);
 	    String accessToken = jobj.get("access_token").toString().replaceAll("\"", "");
 	    return accessToken;
-	  }
+    }
 }
