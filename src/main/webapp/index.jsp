@@ -61,20 +61,20 @@
                         </div>
                      </div>
                      <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                        <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <nav class="navigation navbar navbar-expand-md navbar-dark">
                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                            <span class="navbar-toggler-icon"></span>
                            </button>
                            <div class="collapse navbar-collapse" id="navbarsExample04">
                               <ul class="navbar-nav mr-auto">
                                  <li class="nav-item">
-                                    <a class="nav-link" href="index.html"> Home  </a>
+                                    <a class="nav-link" href="index.jsp"> Home  </a>
                                  </li>
                                  <li class="nav-item">
                                     <a class="nav-link" href="#about">About</a>
                                  </li>
                                  <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact us</a>
+                                    <a class="nav-link" href="product.jsp">Our Products</a>
                                  </li>
                               </ul>
                               <% if (session.getAttribute("code") != "loggedin") { %>
