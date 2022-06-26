@@ -20,9 +20,9 @@ public class ProductInfoServlet extends HttpServlet {
     	super();
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
+	//@see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// since we need  dynamic product information so i just pretend that we have a model and data for product and put it here
