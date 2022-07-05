@@ -55,7 +55,7 @@ public class PaymentServlet extends HttpServlet {
 		return "<html>" 
 				+__includeHTML("rss/PaymentServlet/style.html") 
 				+__includeHTML("rss/PaymentServlet/functionalities.html") 
-				+ AddProduct(Arrays.asList("bird.jpg", "invisible brain.jpg")) 
+				+ AddProduct(Arrays.asList(1, 2)) 
 				+ "</html>";
 	}
 	
@@ -85,48 +85,56 @@ public class PaymentServlet extends HttpServlet {
 	
 	// TODO: Query the database, not hardcoding.
 	// It only run when you have bird.jpg at your $HOME directory
-	protected String AddProduct(List<String> productName)
+	protected String AddProduct(List<Integer> productID)
 	{
 		String cartItems = "";
 
-		SQLite s = SQLite.singleton();
-		ResultSet r = s.Query("Select image, product_name from product limit 1;");
-		String imgLink = "";
-		String imgName = "";
+		SQLite s = new SQLite("onlineshop.db");
+		String imgLink = "", imgName = "", price = "";
+		
 		try
 		{
-			imgLink = r.getString("Image");
-			imgName = r.getString("Product_Name");
+			for (int iii=0; iii<productID.size(); ++iii)
+			{
+				ResultSet r = s.Query("Select image, product_name, price from product where product_id == " + productID.get(iii).toString() +" limit 1;");
+				imgLink = r.getString("Image");
+				imgName = r.getString("Product_Name");
+				price = r.getString("price");
+				
+				cartItems += "<tr>"
+								+ "<td>"
+								+ "<img src=\"" + imgLink + "\" alt=" + imgName + " width=\"100\" height=\"100\">"
+								+ "</td>"
+																
+								+ "<td>"
+								+ price
+								+ "</td>"
+
+								+ "<td>"
+								+ "<input id=\'input" + imgName + "\' type=number placeholder=1 min=1>"
+								+ "</td>"
+	
+								+ "<td>"
+								+ "<button onclick=\"increment('" + imgName + "')\">+</button>"
+								+ "</td>"
+	
+								+ "<td>"
+								+ "<button onclick=\"decrement('" + imgName + "')\">-</button>"
+								+ "</td>"
+								+ "</tr>"
+								
+								+ "<tr>"
+									+ "<td>"
+									+ imgName
+									+ "</td>"
+								+ "</tr>";
+			}
 		}
 		catch (Exception e)
 		{
 			System.out.println("Weird");
 		}
 		
-		for (int iii=0; iii<productName.size(); ++iii)
-			cartItems += "<tr>"
-							+ "<td>"
-							+ "	<img src=\"" + imgLink + "\" alt=" + productName.get(iii) + " width=\"100\" height=\"100\">"
-							+ "</td>"
-							
-							+ "<td>"
-							+ "<input id=\'" + productName.get(iii) + "\' type=number placeholder=1 min=1>"
-							+ "</td>"
-
-							+ "<td>"
-							+ "<button onclick=\"increment('" + productName.get(iii) + "')\">+</button>"
-							+ "</td>"
-
-							+ "<td>"
-							+ "<button onclick=\"decrement('" + productName.get(iii) + "')\">-</button>"
-							+ "</td>"
-							+ "</tr>"
-							
-							+ "<tr>"
-								+ "<td>"
-								+ imgName
-								+ "</td>"
-							+ "</tr>";
 		
 		String productsTable = "<table> "
 							+ cartItems

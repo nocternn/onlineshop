@@ -3,20 +3,16 @@ package servlets;
 import java.sql.*;
 
 public class SQLite 
-{
-	static public SQLite singleton()
-	{
-		if (_sqlite == null)
-			_sqlite = new SQLite();
-		
-		return _sqlite;
-	}
-	
-	private SQLite()
+{	
+	// Create a handle to access database at $HOME/db/@databaseName
+	// Don't know where your $HOME is? 
+	// I got chu, there'll be error message on console
+	// Go and see where SQLite is looking for the db.
+	public SQLite(String databaseName)
 	{
 		try
 		{
-			_c = DriverManager.getConnection("jdbc:sqlite:db/onlineshop.db");
+			_c = DriverManager.getConnection("jdbc:sqlite:db/"+databaseName);
 	    } 
 		catch ( Exception e ) 
 		{
@@ -41,8 +37,22 @@ public class SQLite
 	    }
 		return null;
 	}
+	
+	// Update the database, like "Create table", "Insert" or something
+	public void Update(String query)
+	{
+		try
+		{
+	        Statement s = _c.createStatement();
+	        s.executeUpdate(query);	
+		}
+		catch ( Exception e ) 
+		{
+	         System.err.println( "Query failed - " + e.getClass().getName() + ": " + e.getMessage() );
+	         System.exit(0);
+	    }
+	}
 
-	static private SQLite _sqlite;
 	
 	private Connection _c;
 }
