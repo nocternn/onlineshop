@@ -14,5 +14,19 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/OnlineShopHandPickedLib"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/fluent-hc-4.5.2.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/google-api-client-1.32.1.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/google-api-client-servlet-1.32.1.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/google-http-client-1.39.2.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/google-http-client-jackson-1.22.0.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/google-oauth-client-1.33.3.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/google-oauth-client-servlet-1.33.3.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/gson-2.9.0.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/httpclient-4.5.13.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/httpcore-4.4.14.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/httpcore-4.4.15.jar"/>
+	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/servlet-api.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tomcat10"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
