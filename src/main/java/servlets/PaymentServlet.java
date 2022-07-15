@@ -2,15 +2,11 @@ package servlets;
 
 import jakarta.servlet.http.HttpServlet;
 import java.util.Scanner;
-
-import java.net.URL;
-import java.nio.file.Path;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import jakarta.servlet.ServletException;
@@ -21,7 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class PaymentServlet
  */
-@WebServlet("/PaymentServlet")
+@WebServlet("/payment")
 public class PaymentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -83,62 +79,56 @@ public class PaymentServlet extends HttpServlet {
 		return output.toString();
 	}
 	
-	// TODO: Query the database, not hardcoding.
-	// It only run when you have bird.jpg at your $HOME directory
 	protected String AddProduct(List<Integer> productID)
 	{
 		String cartItems = "";
-
-		SQLite s = new SQLite("onlineshop.db");
 		String imgLink = "", imgName = "", price = "";
+		
+		float totalPrice=0;
 		
 		try
 		{
 			for (int iii=0; iii<productID.size(); ++iii)
 			{
-				ResultSet r = s.Query("Select image, product_name, price from product where product_id == " + productID.get(iii).toString() +" limit 1;");
+				PreparedStatement s = SQLite.get("onlineshop.db").prepareStatement("Select image, product_name, price from product where product_id == ?;");
+				s.setString(1, productID.get(iii).toString());
+				
+				ResultSet r = s.executeQuery();
 				imgLink = r.getString("Image");
 				imgName = r.getString("Product_Name");
 				price = r.getString("price");
+				totalPrice += Float.parseFloat(price);
+
+				s.close();
+				r.close();
 				
 				cartItems += "<tr>"
-								+ "<td>"
-								+ "<img src=\"" + imgLink + "\" alt=" + imgName + " width=\"100\" height=\"100\">"
-								+ "</td>"
-																
-								+ "<td>"
-								+ price
-								+ "</td>"
-
-								+ "<td>"
-								+ "<input id=\'input" + imgName + "\' type=number placeholder=1 min=1>"
-								+ "</td>"
-	
-								+ "<td>"
-								+ "<button onclick=\"increment('" + imgName + "')\">+</button>"
-								+ "</td>"
-	
-								+ "<td>"
-								+ "<button onclick=\"decrement('" + imgName + "')\">-</button>"
-								+ "</td>"
-								+ "</tr>"
+								+ "<td> <img src=\"" + imgLink + "\" alt=" + imgName + " width=\"100\" height=\"100\"> </td>"
+										
+								+ "<td> <button onclick=\"decrement('" + imgName + "')\">-</button></td>"
 								
-								+ "<tr>"
-									+ "<td>"
-									+ imgName
-									+ "</td>"
-								+ "</tr>";
+								+ "<td> <input id='input" + imgName + "' type=number placeholder=1 value=1 maxlength='4' size='4' readonly='readonly'> </td>"
+	
+								+ "<td> <button onclick=\"increment('" + imgName + "')\">+</button></td>"
+								
+								+ "<td> <input id='price" + imgName + "' type=number value='" + price + "' size='4' readonly='readonly'></td>"
+							+ "</tr>"
+									
+								+ "<tr><td>" + imgName + "</td> </tr>"
+								
+							+ "<tr></tr>";	// Separate products
+				
 			}
 		}
 		catch (Exception e)
 		{
-			System.out.println("Weird");
+			System.out.println("Weird: " + e.getMessage());
 		}
 		
 		
-		String productsTable = "<table> "
+		String productsTable = "<table> <tr> <td></td>	<td></td>	<td>Quantity</td>	<td></td>	<td>Price</td></tr>" 
 							+ cartItems
-							+ "</table>";
+							+ "<tr> <td></td>	<td></td>	<td>Total:</td>	<td></td>	<td><input id='Total' type=number value='" + totalPrice + "' size='10' readonly='readonly'></td></tr></table>";
 		
 		return productsTable ;
 	}

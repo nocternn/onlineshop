@@ -79,7 +79,7 @@ public class LoginServlet extends HttpServlet {
         	request.getRequestDispatcher("/info.jsp").forward(request, response);
         	// Debug
         	
-        	response.sendRedirect(url.toString());
+        	//response.sendRedirect(url.toString());
         }
 	}
 
