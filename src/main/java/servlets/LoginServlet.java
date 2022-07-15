@@ -58,10 +58,6 @@ public class LoginServlet extends HttpServlet {
         	System.out.println("Logged In button clicked");        	
             
         } else {
-//        	url.append("http://localhost:8080/onlineshop");
-//        	request.getSession().setAttribute("code", "loggedin");
-        	// Debug
-//        	System.out.println("code = " + request.getSession().getAttribute("code"));
         	
         	System.out.println("Logged In authCode = " + param);
         	
@@ -75,10 +71,7 @@ public class LoginServlet extends HttpServlet {
         	request.setAttribute("name", userInfo.getName());
         	request.setAttribute("email", userInfo.getEmail());
         	
-        	request.getRequestDispatcher("/info.jsp").forward(request, response);
-        	// Debug
-        	
-        	//response.sendRedirect(url.toString());
+        	request.getRequestDispatcher("/info.jsp").forward(request, response);        	
         }
 	}
 
