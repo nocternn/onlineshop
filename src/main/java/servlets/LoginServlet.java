@@ -10,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -50,14 +51,12 @@ public class LoginServlet extends HttpServlet {
 			   .append("&redirect_uri=http://localhost:8080/onlineshop/login") // the servlet that google redirects to after authorization
 			   .append("&access_type=offline") // here we are asking to access to user's data while they are not signed in
 			   .append("&approval_prompt=force"); // this requires them to verify which account to use, if they are already signed in
-			
+
+        	request.setAttribute("code", "loggedin");
 			response.sendRedirect(url.toString());
 			
-        } else if (param.equals("loggedin")){        
-        	// Debug
-        	System.out.println("Logged In button clicked");        	
-            
-        } else {
+        } 
+        else {
         	
         	System.out.println("Logged In authCode = " + param);
         	
@@ -66,12 +65,14 @@ public class LoginServlet extends HttpServlet {
         	GoogleInfo userInfo = new Gson().fromJson(Request.Get(Constants.GOOGLE_LINK_GET_USER_INFO + accessToken)
         			.execute().returnContent().asString()
         			, GoogleInfo.class);
+
+        	HttpSession session = request.getSession();
+        	//request.setAttribute("id", userInfo.getId());
+        	//request.setAttribute("name", userInfo.getName());
+        	session.setAttribute("UserAccount", userInfo.getEmail());
+        	session.setAttribute("code", "loggedin");
         	
-        	request.setAttribute("id", userInfo.getId());
-        	request.setAttribute("name", userInfo.getName());
-        	request.setAttribute("email", userInfo.getEmail());
-        	
-        	request.getRequestDispatcher("/info.jsp").forward(request, response);        	
+        	request.getRequestDispatcher("/welcome").forward(request, response);        	
         }
 	}
 

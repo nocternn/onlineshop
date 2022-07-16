@@ -8,6 +8,6 @@
 		<%
 			out.print("ID: " + request.getAttribute("id").toString());
 			out.print("<br>Name: " + request.getAttribute("name").toString());
-			out.print("<br>Email: " + request.getAttribute("email").toString());
+			out.print("<br>Email: " + request.getAttribute("UserAccount").toString());
 		%>
 	</html>

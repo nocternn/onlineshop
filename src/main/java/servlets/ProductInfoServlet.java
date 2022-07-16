@@ -8,7 +8,7 @@ import jakarta.servlet.http.*;
 /**
  * Servlet implementation class WelcomeServlet
  */
-@WebServlet("/welcome")
+@WebServlet("/productinfo")
 public class ProductInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -29,7 +29,7 @@ public class ProductInfoServlet extends HttpServlet {
 		
 		//ProductModel productModel = new ProductModel();
 		//request.setAttribute("products", productModel.findAll()); //get attribute from the object product we created in model
-		//request.getRequestDispatcher("ProductInfo.jsp").forward(request, response); // ProductInfo.jsp is the page for product info
+		request.getRequestDispatcher("ProductInfo.jsp").forward(request, response); // ProductInfo.jsp is the page for product info
         
 	}
 

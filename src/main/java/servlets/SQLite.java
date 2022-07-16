@@ -6,7 +6,7 @@ import java.util.*;
 public class SQLite 
 {	
 	
-	static public  Connection get(String databaseName)
+	static public Connection get(String databaseName)
 	{
 		if (_m.get(databaseName) == null)
 		{

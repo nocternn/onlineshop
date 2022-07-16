@@ -80,7 +80,7 @@
                               <% if (session.getAttribute("code") != "loggedin") { %>
 							  	<div class="sign_btn"><a href="/onlineshop/login?code=login">Sign In</a></div>
 							  <% } else { %>
-							  	<div class="sign_btn"><a href="/onlineshop/login?code=loggedin">Logged In</a></div>
+							  	<div class="sign_btn"><a href="/onlineshop/product.jsp"><%= session.getAttribute("UserAccount") %></a></div>
 							  <% } %>
                            </div>
                         </nav>
