@@ -81,6 +81,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost (HttpServletRequest req, HttpServletResponse resp)throws ServletException, IOException {
 		doGet(req,resp);
+		
 	}
 	
     private static String getToken(final String code) throws IOException, ClientProtocolException, IOException {
