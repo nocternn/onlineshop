@@ -60,6 +60,7 @@
 			var productQuantityField = document.getElementById("input" + productName).stepUp();
 			var productPrice = document.getElementById("price" + productName).value;
 			document.getElementById("Total").value = parseFloat(document.getElementById("Total").value) + parseFloat(productPrice);
+			
 		  }
 		function decrement(productName) {
 			if (document.getElementById("input" + productName).value > 0)	
@@ -157,6 +158,8 @@
           			<%
           			{
                       	ArrayList<Integer> productID = (ArrayList<Integer>) session.getAttribute("Cart");
+                      	int minh = 1;
+                      	
                 		String imgLink = "", imgName = "", price = "";
                 	
            				PreparedStatement s = SQLite.get("onlineshop.db").prepareStatement("Select image, product_name, price from product where product_id == ?;");
@@ -192,7 +195,6 @@
                   <tr> <td></td>	<td></td>	<td>Total:</td>	<td></td>	<td><input id='Total' type=number value='<%=totalPrice%>' size='10' readonly='readonly'></td></tr>
                   <tr> <td></td>	<td></td>	<td></td>	<td></td>	<td><button type='button'><a href='/onlineshop/form'>Checkout</a></button></td></tr>
 				</table>
-                  
                   
             	</div>
         	</div>
