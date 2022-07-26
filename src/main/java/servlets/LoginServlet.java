@@ -67,12 +67,10 @@ public class LoginServlet extends HttpServlet {
         			, GoogleInfo.class);
 
         	HttpSession session = request.getSession();
-        	//request.setAttribute("id", userInfo.getId());
-        	//request.setAttribute("name", userInfo.getName());
         	session.setAttribute("UserAccount", userInfo.getEmail());
         	session.setAttribute("code", "loggedin");
         	
-        	request.getRequestDispatcher("/welcome").forward(request, response);        	
+        	request.getRequestDispatcher("/").forward(request, response);        	
         }
 	}
 

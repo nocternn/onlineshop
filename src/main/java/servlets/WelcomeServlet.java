@@ -8,7 +8,7 @@ import jakarta.servlet.http.*;
 /**
  * Servlet implementation class WelcomeServlet
  */
-@WebServlet("/welcome")
+@WebServlet("/")
 public class WelcomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
