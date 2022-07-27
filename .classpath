@@ -28,5 +28,20 @@
 	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/httpcore-4.4.15.jar"/>
 	<classpathentry kind="lib" path="D:/HUST/onlineshop-main.zip_expanded/onlineshop-main/src/WEB-INF/libs/servlet-api.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Tomcat10"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/fluent-hc-4.5.2.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/google-api-client-1.32.1.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/google-api-client-servlet-1.32.1.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/google-http-client-1.39.2.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/google-http-client-jackson-1.22.0.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/google-oauth-client-1.33.3.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/google-oauth-client-servlet-1.33.3.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/gson-2.9.0.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/httpclient-4.5.13.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/httpcore-4.4.14.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/httpcore-4.4.15.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="src/WEB-INF/lib/sqlite-jdbc-3.36.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/HELLO/Downloads/setup/apache-tomcat-10.0.22/bin/tomcat-juli.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
