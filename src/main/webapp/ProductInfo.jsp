@@ -5,41 +5,7 @@
 <%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>OnlineShop</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-      <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-      <!-- Google OAuth2.0 -->
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-      <script src="https://apis.google.com/js/platform.js" async defer></script>
-      <meta name="google-signin-scope" content="profile email">
-      <meta name="google-signin-client_id" content="514770052287-j3u5heaf45imceft1cnnfag7vu8d557i.apps.googleusercontent.com">
-   </head>
+   <jsp:include page="_banner.jsp"/>
    <style>
 		/* Remove up/down arrow in number-type button 
 			Chrome, Safari, Edge, Opera */
@@ -114,16 +80,21 @@
             <!-- end header -->
          </div>
       </header>
-      <!-- end banner -->   
+      <!-- end banner --> 
+      
+        
       <div id="product">
          <div class="container">
             <div class="col-md-12" style="padding-top: 120px;">
                <div class="titlepage">                  
 		<%
-			session.setAttribute("ProductInfoID","1");
-			String imgLink = "", imgName = "", price = "", productID = "", description = "";
-			productID = (String) session.getAttribute("ProductInfoID");
-			ArrayList<Integer> cart = new ArrayList<>(); 
+			//session.setAttribute("ProductInfoID","1");
+			String imgLink = "", 
+					imgName = "",
+					price = "",
+					description = "",
+					productID = (String) request.getParameter("ProductInfoID");
+			
 			PreparedStatement s = SQLite.get("onlineshop.db").prepareStatement("Select * from product where product_id == ?;");
 			s.setString(1,productID);
 			ResultSet r = s.executeQuery();
@@ -159,8 +130,13 @@
 		<script>
 			function addCart() {
 			alert("Added to cart");
-			cart.add(productID);
+			<%
+			ArrayList<Integer> cart = (ArrayList<Integer>) session.getAttribute("Cart");
+			if (cart == null)
+				cart = new ArrayList<Integer>();
+			cart.add(Integer.parseInt(productID));
 			session.setAttribute("Cart",cart);
+			%>
 			}
 		</script>
 	            	</div>
