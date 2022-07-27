@@ -1,4 +1,7 @@
 # onlineshop
 
-## Setup library files
-In Java build path of project in Eclipse, set path of servlet-api.jar to <apache_folder>/lib
+A computer online shop to sell comics, jelly.
+
+And Cookies! Yep, that's what web's all about.
+
+Do you want one? Actually, just "Accept All"
