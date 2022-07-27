@@ -33,7 +33,6 @@ public class FormServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("WTF");
 		String email = (String) request.getSession().getAttribute("UserAccount");
 		
 		if (email != null)
@@ -48,7 +47,11 @@ public class FormServlet extends HttpServlet {
 				s.setString(4,request.getParameter("phone").toString());
 				int result = s.executeUpdate();
 				System.out.println(result);
-			} catch(SQLException e) {
+			} 
+			// NOTE: Will throw when an old customer buys for the second time
+			// But it's not important. It failed, just as we want.
+			// So, no need to write more code to check constraints.
+			catch(SQLException e) {
 				e.printStackTrace();
 			}
 		}
