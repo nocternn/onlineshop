@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<jsp:include page="_banner.jsp" />
+<jsp:include page="_banner.jsp"/>
 	<!-- banner -->
             <section class="banner_main">
                <div class="container-fluid">
